@@ -1,15 +1,18 @@
 {
-  "name": "docker_web_app",
+  "name": "friends_management",
   "version": "1.0.0",
   "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
+  "author": "visalakshi visalakshi993@gmail.com",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "jasmine-node spec"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "pg": "^6.1.0"
+    "jasmine-node": "^1.14.5",
+    "pg": "^6.1.0",
+    "request": "^2.83.0"
   }
 }

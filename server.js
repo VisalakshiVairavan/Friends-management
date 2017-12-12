@@ -3,7 +3,7 @@
 const express = require('express');
 var pg = require('pg');
 var bodyParser = require('body-parser')
-var conString = "postgres://myapp:secret@172.17.0.2:5432/myapp_development";
+var conString = "postgres://myapp:asecurepassword@postgresql:5432/myapp_development";
 
 // Constants
 const PORT = 8080;
@@ -390,7 +390,7 @@ function uniq(a) {
 }
 
 app.get('/', (req, res) => {
-    res.send('{"AppName":"Friend\'s Management","Supported API":{}}');
+    res.send('{"AppName":"Friend\'s Management","Supported API":["/user","/friend","/friend/list","/friend/common","/subcribe","/unsubcribe","/updates"]');
 });
 
 app.listen(PORT, HOST);

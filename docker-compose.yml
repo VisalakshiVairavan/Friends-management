@@ -1,0 +1,30 @@
+
+version: '2'
+services:
+  data:
+    image: busybox
+    container_name: data
+    volumes:
+      - /var/lib/postgresql/data 
+  postgresql:
+    restart: always
+    image: postgres
+    container_name: postgresql
+    environment:
+      - POSTGRES_PASSWORD=asecurepassword
+      - POSTGRES_USER=myapp
+      - POSTGRES_DB=myapp_development
+    ports:
+      - "54320:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    volumes_from:
+      - data
+  frnd:  
+    build: .
+    container_name: frnd 
+    ports:
+      - "49160:8080"
+    depends_on:
+      - postgresql
+
