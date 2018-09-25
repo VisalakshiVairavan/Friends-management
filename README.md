@@ -7,7 +7,9 @@ A user can also unsubcribe a previous subscription and view the common friends w
 ### To Run the code
  
 cd to the project folder and run the following commands
+
 `docker-compose build`
+
 `docker-compose run`
 
 The project should be up and running at http://localhost:49160
